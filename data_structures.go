@@ -2,13 +2,17 @@ package main
 
 import "fmt"
 
+// A structure
+type Rectangle struct {
+	width int
+	length int
+}
 func main() {
 
 	//Arrays
-	var arr [3]string
+	var arr [2]string
 	arr[0] = "Hello"
 	arr[1] = "Aanisha"
-	arr[2] = "Mishra"
 	fmt.Println(arr)
 
 	//Slices - Method 1
@@ -21,9 +25,39 @@ func main() {
 	s[0] = 10
 	s[1] = 11
 	g[4] = 14
-	fmt.Println(s)
+	fmt.Println(s, " capacity of s is ", cap(s))
 	a := s[:cap(s)]
-	//size of a will be 8 as it will take up
-	//complete capacity of s and in turn g
+	//size of a will be 8 as it will take up complete capacity of s and in turn g
 	fmt.Println(a)
+
+	var pow = []int{1, 2, 4, 8, 16}
+	//range keyword is used to loop through each element in the slice pow
+	//n represents the index
+	//p represent the value in the index n
+	for n, p := range pow {
+		fmt.Printf("%d indexed value is %d\n", n, p)
+	}
+
+	//creating a new slice using one created earlier
+	new_slice := append(pow, 32, 64)
+	fmt.Println("The new slice is ", new_slice)
+
+	//copy one slice to another
+	copied_slice := make([]int, 2, 4)
+	copy(copied_slice, pow)
+	fmt.Println("Copied slice is ", copied_slice)
+
+	nil_slice1 := make([]int, 0, 0)
+	nil_slice2 := make([]int, 0, 4)
+	var nil_slice3 []int
+	switch {
+	case nil_slice1 == nil:
+		fmt.Println("nil_slice1 is nill")
+	case nil_slice2 == nil:
+		fmt.Println("nil_slice2 is nill")
+	case nil_slice3 == nil:
+		fmt.Println("nil_slice3 is nill")
+	default:
+		fmt.Println("None of the slices are nil!!")
+	}
 }
