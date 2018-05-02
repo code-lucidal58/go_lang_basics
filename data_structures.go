@@ -4,9 +4,10 @@ import "fmt"
 
 // A structure
 type Rectangle struct {
-	width int
+	width  int
 	length int
 }
+
 func main() {
 
 	//Arrays
@@ -60,4 +61,20 @@ func main() {
 	default:
 		fmt.Println("None of the slices are nil!!")
 	}
+
+	//Demonstration of use of structures
+	r := Rectangle{10, 20}
+	fmt.Println(r, "Here width: ", r.width, " and length: ", r.length)
+	pr := &r
+	pr.width = 15
+	r.length = 30
+	fmt.Println("pr: ", pr, " r: ", r)
+
+	//Maps
+	var m = map[string]Rectangle{"Rect1": {1, 2}, "Rect2": {3, 4}}
+	fmt.Println(m)
+	delete(m, "Rect1")
+	x, ok := m["Rect1"]
+	fmt.Println("Value of Rect1: ", x, " Present: ", ok)
+	fmt.Println("Finally m is: ", m)
 }
