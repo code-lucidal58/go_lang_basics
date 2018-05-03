@@ -8,6 +8,15 @@ type Rectangle struct {
 	length int
 }
 
+//Functions with unknown number of arguments
+//Variadic function
+func addNumbers(args ...int)int{
+	sum := 0
+	for _, n:= range args {
+		sum+=n
+	}
+	return sum
+}
 func main() {
 
 	//Arrays
@@ -77,4 +86,7 @@ func main() {
 	x, ok := m["Rect1"]
 	fmt.Println("Value of Rect1: ", x, " Present: ", ok)
 	fmt.Println("Finally m is: ", m)
+
+	// calling function that take n number of arguments
+	fmt.Println("sum from 1 to 6 is ",addNumbers(1,2,3,4,5,6))
 }
