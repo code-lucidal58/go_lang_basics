@@ -10,12 +10,23 @@ type Rectangle struct {
 
 //Functions with unknown number of arguments
 //Variadic function
-func addNumbers(args ...int)int{
+func addNumbers(args ...int) int {
 	sum := 0
-	for _, n:= range args {
-		sum+=n
+	for _, n := range args {
+		sum += n
 	}
 	return sum
+}
+
+func decrement() int {
+	a := 10
+	//closure function : function within function
+	d := func() {
+		a--;
+	}
+	d()
+	d()
+	return a
 }
 func main() {
 
@@ -88,5 +99,7 @@ func main() {
 	fmt.Println("Finally m is: ", m)
 
 	// calling function that take n number of arguments
-	fmt.Println("sum from 1 to 6 is ",addNumbers(1,2,3,4,5,6))
+	fmt.Println("sum from 1 to 6 is ", addNumbers(1, 2, 3, 4, 5, 6))
+
+	fmt.Println("Decrement value of a: ", decrement())
 }
