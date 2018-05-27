@@ -16,3 +16,12 @@ This is preferred/ convention way of including packages.<br>
 import "fmt"
 import "math"
 ```
+
+A name is exported from another package if it starts with capital letter.
+```go
+fmt.Println(math.Pi)
+```
+_Pi_ is a name exported by package _math_. 
+
+### Functions
+Functions in go can take two or more arguements.
