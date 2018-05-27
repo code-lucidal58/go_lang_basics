@@ -10,7 +10,7 @@ import (
 	"math"
 )
 ```
-This is preferred/ convention way of including packages.
+This is preferred/ convention way of including packages.<br>
 **Non factored Import statements**: 
 ```go
 import "fmt"
