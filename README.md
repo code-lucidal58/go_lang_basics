@@ -7,7 +7,7 @@ runtime reflection. Developed by Google in 2007, announced in 2009 and stable ve
 Go is a case sensitive language.
 
 ### Lets GO
-Every Go program is made up of packages. If program starts with _main_ package, it is an executable file.<br>
+Every Go program is made up of packages. If program starts with _main_ package, it is an executable file. Program starts executing from this package.<br>
 Package name is the same as the last element of the import path. 
 For instance, the _math/rand_ package comprises files that begin with the statement _package rand_. 
 To run a go file:  `go run file_name.go`
@@ -27,7 +27,7 @@ import "fmt"
 import "math"
 ```
 Some key packages in Go: strings, io, bytes, os, path/filepath, errors, container/list, hash, encoding/gob<br>
-A name is exported from another package if it starts with capital letter.
+A name is exported from another package if it starts with capital letter. Only exported names are accessible to other packages.
 ```go
 fmt.Println(math.Pi)
 ```
@@ -60,13 +60,34 @@ y : = new(int)
 This will allocate enough memory to store an integer value and assign the memory address to y.
 
 ### Functions
-Functions are defined using keyword func. The parameters must have the type specified alongside. 
+Functions are defined using keyword func. The parameters must have the type specified after parameter name. 
 Functions can return value using _return_ keyword. 
 ```go
-E.g. func function_name(x int, y int) int {return x+y}
+E.g. func function_name(x int, y int) int {
+	return x+y
+}
 ```
-The int  before curly braces states that this function is going to return an int value. `(x int, y int) int`
-This part in the above function is called **signature**.
+The int  before curly braces states that this function is going to return an int value. A function can return any number
+ of results.
+ ```go
+E.g. func function_name(x int, y int) (int, int, int) {
+	return x+y, x, y
+}
+``` 
+Go's return values may be named. If so, they are treated as variables defined at the top of the function.
+A return statement without arguments returns the named return values. This is known as a _naked_ return.
+```go
+func split(sum int) (x, y int) {
+	x = sum * 4 / 9
+	y = sum - x
+	return
+}
+```
+
+Naked return statements should be used only in short functions, as with the example shown here. They can harm readability in longer functions. 
+ When two or more consecutive named function parameters share a type, you can omit the type from all but the last. 
+ `(x int, y int)` can be shortened to `x, y int`.<br>
+ `(x int, y int) int` This part in the above function is called **signature**.<br>
 
 String length is found using len function: `len(string_variable)`
 _%T_ is a format specifier which returns the type of a variable.
