@@ -68,23 +68,9 @@ E.g. func function_name(x int, y int) int {
 }
 ```
 The int  before curly braces states that this function is going to return an int value. A function can return any number
- of results.
- ```go
-E.g. func function_name(x int, y int) (int, int, int) {
-	return x+y, x, y
-}
-``` 
-Go's return values may be named. If so, they are treated as variables defined at the top of the function.
-A return statement without arguments returns the named return values. This is known as a _naked_ return.
-```go
-func split(sum int) (x, y int) {
-	x = sum * 4 / 9
-	y = sum - x
-	return
-}
-```
-
-Naked return statements should be used only in short functions, as with the example shown here. They can harm readability in longer functions. 
+ of results. Go's return values may be named. If so, they are treated as variables defined at the top of the function.
+A return statement without arguments returns the named return values. This is known as a _naked_ return. They can harm 
+readability in longer functions. <br>
  When two or more consecutive named function parameters share a type, you can omit the type from all but the last. 
  `(x int, y int)` can be shortened to `x, y int`.<br>
  `(x int, y int) int` This part in the above function is called **signature**.<br>

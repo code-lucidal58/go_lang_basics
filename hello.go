@@ -10,8 +10,16 @@ func changeByRef(y *string) {
 	*y = "This was passed by reference"
 }
 
+// multiple return
 func multipleReturnFunction(x string) (string, int) {
 	return "It was good", len(x)
+}
+
+//naked return
+func nakedReturnFunction(sum int) (x, y int) {
+	x = sum * 4 / 9
+	y = sum - x
+	return
 }
 
 func main() {
@@ -27,13 +35,16 @@ func main() {
 	const y = "y is constant"
 	fmt.Println(y)
 
+	xx, yy := nakedReturnFunction(45)
+	fmt.Println("Naked return function executed: ", xx,yy)
+
 	//Introduction to pointers
 	s := "Lets check what pointer is"
 	changeByValue(s)
-	fmt.Println(s)
+	fmt.Println("Changed by value: ",s)
 
 	changeByRef(&s)
-	fmt.Println(s)
+	fmt.Println("Changed by reference: ",s)
 
 	//Pointer declaration
 	x := new(string)
