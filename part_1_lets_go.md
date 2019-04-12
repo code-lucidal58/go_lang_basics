@@ -1,9 +1,15 @@
 # Lets Go
-### Lets GO
-Every Go program is made up of packages. If program starts with _main_ package, it is an executable file. Program starts executing from this package.<br>
-Package name is the same as the last element of the import path.
-For instance, the _math/rand_ package comprises files that begin with the statement _package rand_.
-To run a go file:  `go run file_name.go`
+Every Go program is made up of packages. If program starts with _main_ package,
+it is an executable file. Program starts executing from this package.
+A package can be thought as a project or workspace. All related files are inside this
+package and their first line mentions the package name. For instance, the _math/rand_
+package comprises files that begin with the statement _package rand_.
+Package name is the same as the last element of the import path.  
+There are two types of packages:
+* **executable**: spits out an executable file. It used while creating runnable
+applications. It must have first line as ```package main``` and a main function.
+* **reusable**: code dependencies and libraries packages. Package name can be any
+thing except *main*. e.g. helper functions.
 
 ### Import statements
 **Factored Import statements**:

@@ -15,9 +15,13 @@ variable *GOPATH* needs to be created. For detailed steps for installation instr
 follow this link https://golang.org/doc/install .
 
 ## Go CLI commands
+Building a go file, creates an executable file, with the same name as the go file,
+in the same location. Suppose the script is ```main.go```. The executable can be
+executed in mac by writing ```./main``` and in windows by ```main.exe```.
+Some of the frequently used commands are:
 * **go build**: compiles go sources files bunch.
 * **go run**: compiles and executes one or two files.
 * **go fmt**: formats all files in current directory.
 * **go install**: compiles and install a packages.
 * **go get**: downloads the raw source code of third party packages.
-* **go test**: runs any tests associated with current project. 
+* **go test**: runs any tests associated with current project.
