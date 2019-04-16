@@ -16,11 +16,10 @@ func (d deck) print(){
   }
 }
 ```
-`d deck` is the receiver variable of type `deck`. It is a convention of assigning
+`d deck` is the receiver variable of type `deck`. It is a reference to the
+actual variable that is calling this function. It is a convention of assigning
 single letter name to receiver variable, mainly the initials of the type name.
 This receiver variable can be thought as `self` or `this` in other OOP languages.
 
-The usage of type and receiver functions can be found in the project [cards]()
-any variable inside app of type deck will now get access to print function.
-receiver variable -> by reference, just first letter of the type (convention)
-or 1-2-3 letter variable refernece
+The usage of type and receiver functions can be found in the project
+[cards](https://github.com/code-lucidal58/go_lang_basics/tree/master/cards)
