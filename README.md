@@ -5,7 +5,8 @@ Go is a general purpose programming language. It is open source. Due to its conc
 feature it is ideal for multi-core and networked machines. Best suited for modular
 software designs. Compiles very quickly and performs runtime reflection. Developed
 by Google in 2007, announced in 2009 and stable version released in 2015. Go is a
-case sensitive language.
+case sensitive language.  
+Go is not an Object Oriented Programming Language.
 
 ## Installing Go
 Go can be downloaded from https://golang.org/dl/ . The installer will append *PATH*

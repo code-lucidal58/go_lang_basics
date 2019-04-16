@@ -11,42 +11,85 @@ applications. It must have first line as ```package main``` and a main function.
 * **reusable**: code dependencies and libraries packages. Package name can be any
 thing except *main*. e.g. helper functions.
 
-### Import statements
-**Factored Import statements**:
+## Import statements
+They give code access of the imported package to the current package.
+
+### Factored Import statements
 ```go
 import (
 	"fmt"
 	"math"
 )
 ```
-This is preferred/ convention way of including packages.<br>
-**Non factored Import statements**:
+This is preferred/ convention way of including packages.  
+### Non factored Import statements
 ```go
 import "fmt"
 import "math"
 ```
-Some key packages in Go: strings, io, bytes, os, path/filepath, errors, container/list, hash, encoding/gob<br>
-A name is exported from another package if it starts with capital letter. Only exported names are accessible to other packages.
+Some key packages in Go: strings, io, bytes, os, path/filepath, errors, container/list,
+hash, encoding/gob. All package and their details can be found here: https://golang.org/pkg/ .
+A name is exported from another package if it starts with capital letter.
+Only exported names are accessible to other packages.
 ```go
 fmt.Println(math.Pi)
 ```
-_Pi_ is a name exported by package _math_.
+_Pi_ is a name exported by package _math_.  
+Files in the same package do not need to be imported.
 
-### Variables
-Variables in Go have the same convention as most other languages (starts with letter, contains numbers and underscore)<br>
-Single Variable declaration: `var a bool`
-Double Variable declaration: `var a,b,c bool`
-Variable Naming conventions: camelCase <br>
+## Variables
+Variables in Go have the same convention as most other languages (starts with
+letter, contains numbers and underscore).
+* Single Variable declaration: ```var a bool```
+* Double Variable declaration: ```var a,b,c bool```
+Variable Naming conventions: camelCase  
 Assigning value to variable:
 ```go
-a := ”Aanisha” //creates new variable and assigns
+var card = "Ace of Spades" //creates new variable and assigns
+a := ”Aanisha” //another method: creates new variable and assigns
 a = “Aanisha” // assigns existing variable a
 ```
 If variable is not initialised after declaration, it is initialised to 0 if int, false if bool and “” if string<br>
-
+***NOTE***: Variables can be declared outside all functions, but cannot be initialised.
+Initialisations must be done inside a function.  
 **Types in Go**: uint8, uint16, uint32, uint64 (unsigned integers, memory located as per size mentioned in the name),
 int8, int16...int64(signed integers). If just int is used, it becomes platform dependent. For floating point number,
-float32, float64 : complex32, complex64 for storing complex numbers. Bool: true, false.
+float32, float64 : complex32, complex64 for storing complex numbers. Bool: true, false. String.
+
+## Functions
+Functions are defined using keyword ```func```. The parameters must have the type
+specified after parameter name. Functions can return value using _return_ keyword.
+The return type must also be specified in the function definition. Otherwise,
+it is taken as void.
+```go
+E.g. func function_name(x int, y int) int {
+	return x+y
+}
+```
+The int  before curly braces states that this function is going to return an int value.
+A function can return any number of results. Go's return values may be named. If so,
+they are treated as variables defined at the top of the function. A return statement
+without arguments returns the named return values. This is known as a _naked_ return.
+They can harm readability in longer functions.  
+When two or more consecutive named function parameters share a type, you can omit the
+type from all but the last.
+ * `(x int, y int)` can be shortened to `x, y int`.  
+ * `(x int, y int) int` This part in the above function is called **signature**.
+String length is found using *len* function: `len(string_variable)`
+_%T_ is a format specifier which returns the type of a variable.
+```go
+fmt.Printf(“Type of the variable is%T”,var_name)
+```
+
+## Loops
+To iterate through iterable objects, e.g. slices, `for` statements can be used.
+```go
+cards = []string{"Ace","Spade"}
+for index, suit := range cards{
+	fmt.Println(index, suit)
+}
+```
+The variable declared in the first line of for loop, should be used in the *for* body
 
 ### Pointers
 Pointers have same logic as in C++. Parameters passed to a function are by default passed by value.
@@ -58,27 +101,6 @@ y : = new(int)
 ```
 This will allocate enough memory to store an integer value and assign the memory address to y.
 
-### Functions
-Functions are defined using keyword func. The parameters must have the type specified after parameter name.
-Functions can return value using _return_ keyword.
-```go
-E.g. func function_name(x int, y int) int {
-	return x+y
-}
-```
-The int  before curly braces states that this function is going to return an int value. A function can return any number
- of results. Go's return values may be named. If so, they are treated as variables defined at the top of the function.
-A return statement without arguments returns the named return values. This is known as a _naked_ return. They can harm
-readability in longer functions. <br>
- When two or more consecutive named function parameters share a type, you can omit the type from all but the last.
- `(x int, y int)` can be shortened to `x, y int`.<br>
- `(x int, y int) int` This part in the above function is called **signature**.<br>
-
-String length is found using len function: `len(string_variable)`
-_%T_ is a format specifier which returns the type of a variable.
-```go
-fmt.Printf(“Type of the variable is%T”,var_name)
-```
 
 ### Conditionals
 Refer `conditionals.go` in this repository for practical usages<br>
