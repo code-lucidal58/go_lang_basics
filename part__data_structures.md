@@ -2,8 +2,10 @@
 Refer
 [data_structures.go](https://github.com/code-lucidal58/go_lang_basics/blob/master/single_page_scripts/data_structures.go)
 practical usages.
+
 ## Arrays
-Length of array must be specified. It can be a variable. An array type once declared cannot be changed.
+Length of array must be specified. It can be a variable also. An array type once
+declared cannot be changed.
 ```go
 var arr [4][8] int
 ```
