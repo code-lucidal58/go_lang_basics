@@ -1,8 +1,15 @@
 # GoLangBasics
 
+Golang Notes from multiple sources.
+
+Pre-requisite to understand the content
+- Knows any other programming language basics
+
+Using Golang 1.16
+
 ## Introduction to the language
-Go is a general purpose programming language. It is open source. Due to its concurrency
-feature it is ideal for multi-core and networked machines. Best suited for modular
+Go is a general purpose programming language. It is open source. It is NOT an object-oriented programming language. 
+Due to its concurrency feature it is ideal for multi-core and networked machines. Best suited for modular
 software designs. Compiles very quickly and performs runtime reflection. Developed
 by Google in 2007, announced in 2009 and stable version released in 2015. Go is a
 case sensitive language.  

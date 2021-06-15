@@ -8,7 +8,7 @@ func function_name(x int, y int) int {
 	return x+y
 }
 ```
-The int  before curly braces states that this function is going to return an int value.
+The int before curly braces states that this function is going to return an `int` value.
 A function can return any number of results. Go's return values may be named. If so,
 they are treated as variables defined at the top of the function. A return statement
 without arguments returns the named return values. This is known as a _naked_ return.
@@ -22,6 +22,16 @@ _%T_ is a format specifier which returns the type of a variable.
 ```
 fmt.Printf(“Type of the variable is%T”,var_name)
 ```
+
+A function can also have a receiver. A receiver adds a rule that only an object of the receiver can call the function.
+In the below example, a user-defined type `deck` is the receiver. The function `print` can be called only by an object 
+of `deck`.
+```go
+func (d deck) print(){
+	// function body
+}
+```
+By convention, the variable in the receiver is a single letter, usually the first letter of the receiver type.
 
 ### Methods and Interfaces
 Refer `methods_interfaces.go` in this repository for practical usages<br>
