@@ -1,10 +1,10 @@
 # Functions
-Functions are defined using keyword ```func```. The parameters must have the type
-specified after parameter name. Functions can return value using _return_ keyword.
+`func` keyword defines a function. The parameters must have the type
+specified after parameter name. Functions can return value using `return` keyword.
 The return type must also be specified in the function definition. Otherwise,
 it is taken as void.
-```go
-E.g. func function_name(x int, y int) int {
+```
+func function_name(x int, y int) int {
 	return x+y
 }
 ```
@@ -19,7 +19,7 @@ type from all but the last.
  * `(x int, y int) int` This part in the above function is called **signature**.
 String length is found using *len* function: `len(string_variable)`
 _%T_ is a format specifier which returns the type of a variable.
-```go
+```
 fmt.Printf(“Type of the variable is%T”,var_name)
 ```
 

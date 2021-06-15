@@ -26,8 +26,10 @@ func main() {
 	//declaring a variable and assigning it later
 	var a string
 	a = "Aanisha"
+
 	//declaring a variable as well as assigning it simultaneously
 	b := 6
+
 	//printing a line by concatenating strings and integers
 	fmt.Println("Hello World!", a, b)
 
@@ -36,15 +38,15 @@ func main() {
 	fmt.Println(y)
 
 	xx, yy := nakedReturnFunction(45)
-	fmt.Println("Naked return function executed: ", xx,yy)
+	fmt.Println("Naked return function executed: ", xx, yy)
 
 	//Introduction to pointers
 	s := "Lets check what pointer is"
 	changeByValue(s)
-	fmt.Println("Changed by value: ",s)
+	fmt.Println("Changed by value: ", s)
 
 	changeByRef(&s)
-	fmt.Println("Changed by reference: ",s)
+	fmt.Println("Changed by reference: ", s)
 
 	//Pointer declaration
 	x := new(string)
