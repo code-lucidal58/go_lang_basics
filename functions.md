@@ -26,6 +26,13 @@ When two or more consecutive named function parameters share a type, you can omi
 * `(x int, y int) int` This part in the above function is called **signature**. String length is found using *len*
   function: `len(string_variable)`
 
+A **function literal** is an un-named function. Much like lambdas in Python.
+```go
+go func() {
+  time.Sleep(time.Second * 2)
+  checkLink(c)
+}()
+```
 If a function to take unknown number of arguments, args  keyword is used.
 ```go
 func function_name ( args ...data_type ){

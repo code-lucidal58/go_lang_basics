@@ -24,6 +24,8 @@ When a program is executed, the first go routine is triggered. This is called th
 The routines spawned by user are called **child routines**.
 Main routines controls the time when the program exits. It does NOT take into account the half executed child routines.
 This means that, once the code inside `main` function is complete, the program exits.
+Note that values should not passed by reference between go rountines, especially when both are working on the same 
+variable.
 
 ## Channels
 Channels are used to establish communication between routines, main and child, both. It can be used to share messages
@@ -38,4 +40,9 @@ c := make(chan string)
 At a time, only one string can be placed into the channel. 
 To put a message into a channel, the syntax is `my_channel <- "Hello`
 To receive a message from channel , the syntax is `my_msg := <- my_channel`
-
+Waiting to receive message from a channel is blocking call.
+```go
+func dummy(s string, c chan string) {
+	c<-"Hola"
+}
+```
