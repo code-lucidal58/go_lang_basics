@@ -7,3 +7,11 @@ variable `T`.
 
 The testing framework will not take care of the setup cleanup. This is to be handled by the developer. Hence, any breakage
 in the test functions should be handled properly.
+
+```go
+import "testing"
+
+func TestFileReadAndWrite(t *testing.T){
+	//test body
+}
+```

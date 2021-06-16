@@ -25,10 +25,12 @@ When two or more consecutive named function parameters share a type, you can omi
 * `(x int, y int)` can be shortened to `x, y int`.
 * `(x int, y int) int` This part in the above function is called **signature**. String length is found using *len*
   function: `len(string_variable)`
-  _%T_ is a format specifier which returns the type of a variable.
 
-```
-fmt.Printf(“Type of the variable is%T”,var_name)
+If a function to take unknown number of arguments, args  keyword is used.
+```go
+func function_name ( args ...data_type ){
+	//statements
+	}
 ```
 
 A function can also have a receiver. A receiver adds a rule that only an object of the receiver can call the function.
@@ -115,7 +117,41 @@ function can be called as `p3.updateLastName("Miller")`. Notice that a pointer o
 Go is smart enough to figure that out. If receiver has a pointer, Go will pass the object by reference, even if not explicitly 
 mentioned. Explicit mention of the pointer by adding `&` infront of `p3` is also acceptable.
 
+### Defer
+Defer statement defers the execution of function. Function calls are stacked up and called in the
+sequence of last in first out. Just state defer before making any function call. That function will be executed
+after all statements are executed in main.
+```go
+defer f.Close()
+```
+
 ### Interfaces
 
-Refer `methods_interfaces.go` in this repository for practical usages.
+Refer [interfaces.go](./single_page_scripts/interfaces.go) for code examples. `interface` keyword is used to declare the same.
+There are two ways in which interface is used. One way, it can be used to create abstract functions. Abstract functions are
+functions whose only signature is defined in the interface block. The definition of that function is decided by the struct 
+implementing that interface. To implement an interface (done implicitly only), a struct should provide definition 
+for all the function signatures in the interface. 
+Note that, values/variables other than interface are called `concrete` types.
 
+```go
+type bot interface {
+	getGreeting(int) string
+	respondYes(string, boolean) boolean
+}
+```
+Multiple Interfaces can be clubbed into a single interface.
+```go
+type bot interface {
+	// body1
+}
+type agent interface {
+	//body 2
+}
+type agentBot interface {
+	bot
+	agent
+}
+```
+The second way, Interface can be used as a placeholder data type. If the data type of a particular variable is not known from before hand,
+it can be declared as an interface.  

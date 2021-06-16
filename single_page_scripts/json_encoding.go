@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-type response1 struct {
+type json_e struct {
 	Page   int
 	Fruits []string
 }
@@ -36,7 +36,7 @@ func main() {
 	mapB, _ := json.Marshal(map[string]int{"x": 1, "y": 2, "z": 3})
 	fmt.Println(string(mapB))
 
-	res1B, _ := json.Marshal(&response1{Page: 23, Fruits: []string{"apple", "guava", "grapes"}})
+	res1B, _ := json.Marshal(&json_e{Page: 23, Fruits: []string{"apple", "guava", "grapes"}})
 	fmt.Println(string(res1B))
 
 	res2B, _ := json.Marshal(&response2{Page: 23, Fruits: []string{"apple", "guava", "grapes"}})

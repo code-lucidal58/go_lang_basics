@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-type response1 struct {
+type json_d struct {
 	Name   string   `json:"name"`
 	Age    int      `json:"age"`
 	Fruits []string `json:"fruits"`
@@ -29,7 +29,7 @@ func main() {
 
 	//decoding to custom data types
 	str1 := `{"name":"Aanisha", "age":23, "fruits":["apple","guava","grapes"]}`
-	res1 := response1{}
+	res1 := json_d{}
 	if err := json.Unmarshal([]byte(str1), &res1); err != nil {
 		panic(err)
 	}

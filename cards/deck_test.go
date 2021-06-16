@@ -7,7 +7,7 @@ import (
 
 func TestNewDeck(t *testing.T) {
 	d := newDeck()
-	expectedLength := 20
+	expectedLength := 52
 	if len(d) != expectedLength {
 		t.Errorf("Expected deck length of %d, but got %d", expectedLength, len(d))
 	}
@@ -15,7 +15,7 @@ func TestNewDeck(t *testing.T) {
 	if d[0] != firstElement {
 		t.Errorf("Expected first card as %s, got %s", firstElement, d[0])
 	}
-	lastElement := "Five of Clubs"
+	lastElement := "King of Clubs"
 	if d[len(d)-1] != lastElement {
 		t.Errorf("Expected last card as %s, got %s", lastElement, d[len(d)-1])
 	}
@@ -26,7 +26,7 @@ func TestSaveToFileAndNewDeckFromFile(t *testing.T) {
 	d := newDeck()
 	d.saveToFile("_decktesting")
 	loadedDeck := newDeckFromFile("_decktesting")
-	expectedLength := 20
+	expectedLength := 52
 	if len(loadedDeck) != expectedLength {
 		t.Errorf("Expected deck length of %d, but got %d", expectedLength, len(loadedDeck))
 	}

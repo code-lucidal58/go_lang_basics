@@ -71,6 +71,11 @@ Go complains if a declared/initialised variable is not used.
 ***NOTE***: Variables can be declared outside all functions, but cannot be initialised. Initialisations must be done
 inside a function.
 
+_%T_ is a format specifier which returns the type of a variable.
+```
+fmt.Printf(“Type of the variable is%T”,var_name)
+```
+
 ### Data Types in Go
 
 uint8, uint16, uint32, uint64 (unsigned integers, memory located as per size mentioned in the name), int8,
@@ -96,6 +101,7 @@ the original slice. It creates a new slices and returns it. All elements should 
 ```go
 var arr [4][8]int //array
 cards := []string{"a", "b", "cd"} // slice
+x := make([]int , 5, 10) // another way by giving length and capacity
 cards = append(cards, "df")       //add new element
 fmt.Println(cards[2]) // cd
 ```
@@ -140,7 +146,8 @@ Adding `&` infront of an object will return its address in the system memory. Ad
 return the value in that memory, the whole object.
 
 ```go
-var p *person
+var p *person //OR
+var p = new(person)
 p = &person{}   // p is a pointer to person object
 fmt.Println(*p) // prints the empty struct, called dereferencing 
 

@@ -33,3 +33,22 @@ Some of the frequently used commands are:
 * **go install**: compiles and install a packages.
 * **go get**: downloads the raw source code of third party packages.
 * **go test**: runs any tests associated with current project.
+
+## Contents of the repository
+* [Introduction](./lets_go.md) contains introduction to packages, variables, data types, type aliasing, conversion and pointers.
+* [Loops and Conditions](./loop_and_conditionals.md) contains notes on `if` and `for` statements.
+* [Functions](./functions.md)  
+
+[hello](./single_page_scripts/hello.go), [data_structure](./single_page_scripts/data_structures.go),
+and [conditionals](./single_page_scripts/conditionals.go) contain scripts based on the concepts learned.
+
+* [Test](tests.md) contains notes on go unit tests
+* [File and Error handling](file_n_err_handling.md) contains a brief peek into the `file` and `os` packages.
+* [HTTP calls](http_calls.md) is about make HTTP calls and read the data received.
+
+[http_interface](./single_page_scripts/http_interface.go), [interface](./single_page_scripts/interfaces.go) 
+contain scripts based on the concepts learned.
+
+There are some more scripts in the `single_page_scripts` directory. The file names are kept intuitive.  
+[Cards](./cards) is a simple project for dealing a set of cards.  
+[Knowledge Check](./single_page_scripts/knowledge_check.go) contains some logics that can challenge the reader's understanding.
