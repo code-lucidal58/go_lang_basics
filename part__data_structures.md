@@ -3,13 +3,6 @@ Refer
 [data_structures.go](https://github.com/code-lucidal58/go_lang_basics/blob/master/single_page_scripts/data_structures.go)
 practical usages.
 
-## Arrays
-Length of array must be specified. It can be a variable also. An array type once
-declared cannot be changed.
-```go
-var arr [4][8] int
-```
-This is a 2D array which will hold int values _only_. Array elements are 0 indexed.
 
 **Slices** are segment of an array. They are always associated with the underlying array. Shares saved storage with array. The length of slice is variable and found using the len function. E.g. s := []int {1,2,3,4,5}
 Another way of declaring slices in using built-in function make.

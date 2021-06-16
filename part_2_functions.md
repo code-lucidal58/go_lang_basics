@@ -115,9 +115,7 @@ function can be called as `p3.updateLastName("Miller")`. Notice that a pointer o
 Go is smart enough to figure that out. If receiver has a pointer, Go will pass the object by reference, even if not explicitly 
 mentioned. Explicit mention of the pointer by adding `&` infront of `p3` is also acceptable.
 
-### Methods and Interfaces
+### Interfaces
 
-Refer `methods_interfaces.go` in this repository for practical usages<br>
-Methods are functions declared with a receiver. Receiver is similar to parameter. A receiver is a value or a pointer of
-a named or struct type. See example in code for more clarification. A point to be noted, parameters are declared before
-method_name in method declaration.
+Refer `methods_interfaces.go` in this repository for practical usages.
+

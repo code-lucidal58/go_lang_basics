@@ -94,21 +94,44 @@ array. It can grow or shrink at will. New element can be added using `append` fu
 the original slice. It creates a new slices and returns it. All elements should be of identical data types.
 
 ```go
+var arr [4][8]int //array
 cards := []string{"a", "b", "cd"} // slice
 cards = append(cards, "df")       //add new element
 fmt.Println(cards[2]) // cd
 ```
+
 A slice uses array internally. It also stores pointer to head, capacity and length. Capacity is always more than equal
-to length. Length is the count of number of items in the slice. Pointer to head actually points to the content in the slice.
-To create a slice out of a slice, `arr[start_index:end_index]` syntax can be used. Start index is included and end index
-is not included. If start index if left empty, that means start from the beginning. Similarly, if end index is missing,
-it means go till the end.
+to length. Length is the count of number of items in the slice. Pointer to head actually points to the content in the
+slice. To create a slice out of a slice, `arr[start_index:end_index]` syntax can be used. Start index is included and
+end index is not included. If start index if left empty, that means start from the beginning. Similarly, if end index is
+missing, it means go till the end.
 
 ```go
 a := []string{"a", "b", "c", "d"}
 fmt.Println(a[1:3]) // b c
 ```
 
+### Maps
+
+Map contains key-value pairs. The datatype for all keys should be the same. Similarly, all values will be of same
+datatype. Below is an example of a map declaration with string keys and int values.
+```go
+colors := map[string]int{
+  "red": 167,
+  "green": 38,
+}
+var age  = make(map[string]int)
+age["amit"] = 27
+```
+Note that in multi-line declaration, each key value pair is separated by comma, even the last one.
+Dot notation to access key values is NOT allowed in map. 
+To delete a key from map, use `delete` function like `delete(age, "amit")`.
+`for` loop can be used to iterate over a map.
+```go
+for key, value  := range colors {
+	fmt.Println(key, value)
+}
+```
 ### Pointers
 
 Pointers in Go will store address. `*` infront of the datatype will make it a pointer variable. Such variables can store
