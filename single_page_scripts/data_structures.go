@@ -8,6 +8,14 @@ type Rectangle struct {
 	length int
 }
 
+func (r *Rectangle) updateWidth(width int) {
+	r.width = width
+}
+
+func (r *Rectangle) print() {
+	fmt.Printf("Length: %d Width %d\n", r.length, r.width)
+}
+
 //Functions with unknown number of arguments
 //Variadic function
 func addNumbers(args ...int) int {
@@ -22,7 +30,7 @@ func decrement() int {
 	a := 10
 	//closure function : function within function
 	d := func() {
-		a--;
+		a--
 	}
 	d()
 	d()
@@ -84,11 +92,9 @@ func main() {
 
 	//Demonstration of use of structures
 	r := Rectangle{10, 20}
-	fmt.Println(r, "Here width: ", r.width, " and length: ", r.length)
-	pr := &r
-	pr.width = 15
-	r.length = 30
-	fmt.Println("pr: ", pr, " r: ", r)
+	r.print()
+	r.updateWidth(15)
+	r.print()
 
 	//Maps
 	var m = map[string]Rectangle{"Rect1": {1, 2}, "Rect2": {3, 4}}
@@ -102,4 +108,11 @@ func main() {
 	fmt.Println("sum from 1 to 6 is ", addNumbers(1, 2, 3, 4, 5, 6))
 
 	fmt.Println("Decrement value of a: ", decrement())
+
+	// Pointers
+	var q *string
+	var p_string = "Hello World"
+	q = &p_string
+	fmt.Println("Value of p_string: ", p_string , ", Value from pointer: ", *q)
+	fmt.Println("Value of pointer", q)
 }

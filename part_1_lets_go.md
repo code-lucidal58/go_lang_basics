@@ -98,7 +98,8 @@ cards := []string{"a", "b", "cd"} // slice
 cards = append(cards, "df")       //add new element
 fmt.Println(cards[2]) // cd
 ```
-
+A slice uses array internally. It also stores pointer to head, capacity and length. Capacity is always more than equal
+to length. Length is the count of number of items in the slice. Pointer to head actually points to the content in the slice.
 To create a slice out of a slice, `arr[start_index:end_index]` syntax can be used. Start index is included and end index
 is not included. If start index if left empty, that means start from the beginning. Similarly, if end index is missing,
 it means go till the end.
@@ -107,6 +108,24 @@ it means go till the end.
 a := []string{"a", "b", "c", "d"}
 fmt.Println(a[1:3]) // b c
 ```
+
+### Pointers
+
+Pointers in Go will store address. `*` infront of the datatype will make it a pointer variable. Such variables can store
+address of an object of the respective datatype. An int pointer will point to the address of an int object only.
+Adding `&` infront of an object will return its address in the system memory. Adding `*` in front of pointer object will
+return the value in that memory, the whole object.
+
+```go
+var p *person
+p = &person{}   // p is a pointer to person object
+fmt.Println(*p) // prints the empty struct, called dereferencing 
+
+x:= 10
+fmt.Println("Address", &x)
+```
+
+Knowledge Check available [here](./single_page_scripts/knowledge_check.go)
 
 ### Type aliasing
 
@@ -142,6 +161,6 @@ interesting function is `rand.Shuffle`. It is used to shuffle elements in an obj
 rand.Seed(time.Now().UnixNano())
 d := []int{1, 2, 3, 7, 9, 10, 34, 12}
 rand.Shuffle(len(d), func (i, j int) {
-    d[i], d[j] = d[j], d[i]
+d[i], d[j] = d[j], d[i]
 })
 ```
